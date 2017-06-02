@@ -65,3 +65,16 @@ This shows, that the server received two POST requests the second one 5s after t
 
 I'm not sure if this is a bug or a breaking change. It probably got introduced through [#2534](https://github.com/nodejs/node/pull/2534). It only seems to happen when two connections are used (that's why the prefight OPTIONS is forced to happen in my code), so it may be that the wrong connection is being closed here.
 
+# Workaround
+
+Setting the `keepAliveTimeout` (see [https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_server_keepalivetimeout]()) of the http server to a value greater than the maximum duration of a request solves the problem. You can try this with
+
+        npm start -- --keepAliveTimeout 20000
+
+and then in another terminal
+
+        node client.js
+
+# NodeJS issue
+
+See [https://github.com/nodejs/node/issues/13391]()
