@@ -1,0 +1,16 @@
+{
+  "name": "node8keepalivetimeout",
+  "version": "1.0.0",
+  "description": "Demonstrate problem with node8 http.Server.keepAliveTimeout",
+  "main": "server.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "author": "Paul Bininda",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "request": "^2.81.0"
+  }
+}
