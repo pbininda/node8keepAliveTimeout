@@ -44,7 +44,7 @@ Error: socket hang up
 
 # Browser Retries
 
-It seems, all major browsers implement [https://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html#sec8.2.4](). Since the server closes the connection on which it received the POST request before sending an answer, the Browsers re-send the POST. Note that you don't see the re-send in chrome dev tools but using Wireshark shows the retransmission. To have a look at this, run
+It seems, all major browsers implement [https://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html#sec8.2.4](https://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html#sec8.2.4). Since the server closes the connection on which it received the POST request before sending an answer, the Browsers re-send the POST. Note that you don't see the re-send in chrome dev tools but using Wireshark shows the retransmission. To have a look at this, run
 
         npm start
 
@@ -67,7 +67,7 @@ I'm not sure if this is a bug or a breaking change. It probably got introduced t
 
 # Workaround
 
-Setting the `keepAliveTimeout` (see [https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_server_keepalivetimeout]()) of the http server to a value greater than the maximum duration of a request solves the problem. You can try this with
+Setting the `keepAliveTimeout` (see [https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_server_keepalivetimeout](https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_server_keepalivetimeout)) of the http server to a value greater than the maximum duration of a request solves the problem. You can try this with
 
         npm start -- --keepAliveTimeout 20000
 
@@ -77,4 +77,4 @@ and then in another terminal
 
 # NodeJS issue
 
-See [https://github.com/nodejs/node/issues/13391]()
+See [https://github.com/nodejs/node/issues/13391](https://github.com/nodejs/node/issues/13391)
