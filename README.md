@@ -44,7 +44,7 @@ Error: socket hang up
 
 # Browser Retries
 
-It seems, all major browsers implement [https://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html#sec8.2.4](https://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html#sec8.2.4). Since the server closes the connection on which it received the POST request before sending an answer, the Browsers re-send the POST. Note that you don't see the re-send in chrome dev tools but using Wireshark shows the retransmission. To have a look at this, run
+It seems, most of the major browsers (Chrome, Firefox, Edge) implement [https://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html#sec8.2.4](https://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html#sec8.2.4). Since the server closes the connection on which it received the POST request before sending an answer, the Browsers re-send the POST. Note that you don't see the re-send in chrome dev tools but using Wireshark shows the retransmission. To have a look at this, run
 
         npm start
 
